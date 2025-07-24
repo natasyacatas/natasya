@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined Content</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
+    <script>
+        function hitungEksponen() {
+            var bil1 = parseFloat(document.getElementById("eksponenBil1").value);
+            var bil2 = parseFloat(document.getElementById("eksponenBil2").value);
+            var hasil = Math.pow(bil1, bil2);
+            document.getElementById("eksponenHasil").innerText = "Hasil Eksponen = " + hasil;
+        }
+
+        function hitungPembagian() {
+            var bil1 = parseFloat(document.getElementById("pembagianBil1").value);
+            var bil2 = parseFloat(document.getElementById("pembagianBil2").value);
+            if (bil2 === 0) {
+                document.getElementById("pembagianHasil").innerText = "Pembagian dengan 0 tidak diperbolehkan";
+            } else {
+                var hasil = bil1 / bil2;
+                document.getElementById("pembagianHasil").innerText = "Hasil Pembagian = " + hasil;
+            }
+        }
+
+        function hitungPengurangan() {
+            var bil1 = parseFloat(document.getElementById('penguranganBilangan1').value);
+            var bil2 = parseFloat(document.getElementById('penguranganBilangan2').value);
+            var hasil = bil1 - bil2;
+            document.getElementById('penguranganHasil').innerText = hasil;
+        }
+
+        function hitungPerkalian() {
+            var bil1 = parseFloat(document.getElementById("perkalianBil1").value);
+            var bil2 = parseFloat(document.getElementById("perkalianBil2").value);
+            var hasil = bil1 * bil2;
+            document.getElementById("perkalianHasil").innerText = hasil;
+        }
+
+        function decrementNumber() {
+            var num1 = parseFloat(document.getElementById('decrementNumber1').value);
+            var result = num1 - 1; // Operasi decrement
+            document.getElementById('decrementResult').textContent = result;
+        }
+
+        function incrementNumber() {
+            var num1 = parseFloat(document.getElementById('incrementNumber1').value);
+            var result = num1 + 1; // Operasi increment
+            document.getElementById('incrementResult').textContent = result;
+        }
+
+        function calculateModulus() {
+            var num1 = parseFloat(document.getElementById('modulusNumber1').value);
+            var num2 = parseFloat(document.getElementById('modulusNumber2').value);
+            var result = num1 % num2;
+            document.getElementById('modulusResult').textContent = result;
+        }
+    </script>
+  <style>/* styles.css */
+
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background: url('A_serene_and_elegant_background_image_featuring_so.png') no-repeat center center fixed; /* Ganti dengan URL gambar */
+    background-size: cover; /* Mengatur gambar agar menutupi seluruh latar belakang */
+    color: black; /* Teks berwarna putih */
+    padding: 30px;
+}
+
+/* Overlay untuk meningkatkan keterbacaan */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Overlay hitam lembut */
+    z-index: 1;
+}
+
+/* Section styles */
+section {
+    position: relative; /* Untuk mengatur posisi overlay */
+    background: rgba(255, 255, 255, 0.9); /* Warna putih bersih dengan transparansi */
+    margin: 20px 0;
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    z-index: 2; /* Menempatkan di atas overlay */
+}
+
+/* Efek hover pada section */
+section:hover {
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Header styles */
+h1 {
+    margin-bottom: 15px;
+    font-size: 28px;
+    color: #87CEEB; /* Biru cerah */
+    text-align: center;
+    font-weight: 600; /* Tebal */
+    border-bottom: 2px solid #87CEEB; /* Garis bawah biru cerah */
+    padding-bottom: 10px;
+}
+
+/* Input styles */
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #dcdcdc; /* Border abu-abu muda */
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    background-color: white; /* Latar belakang abu-abu muda untuk input */
+    color: black; /* Teks berwarna hitam */
+}
+
+input[type="number"]:focus {
+    border-color: white; /* Border biru cerah saat fokus */
+    outline: none;
+}
+
+/* Button styles */
+button, input[type="submit"] {
+    background: #87CEEB;  /* Biru cerah */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease, transform 0.2s;
+    font-weight: 500; /* Sedikit tebal */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+button:hover, input[type="submit"]:hover {
+    background: #abu; /* Biru gelap saat hover */
+    transform: translateY(-1px); /* Efek mengangkat saat hover */
+}
+
+/* Result styles */
+p, span {
+    font-size: 18px;
+    margin-top: 10px;
+    display: block;
+    font-weight: bold;
+    color: abu abu tua; /* Abu-abu muda untuk hasil */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 24px; /* Perbaikan kesalahan ketik */
+    }
+}</style>
+</head>
+<body>
+
+    <!-- Eksponen Content -->
+    <section id="eksponen">
+        <h1>Eksponen</h1>
+        <form>
+            Bilangan Basis:<br>
+            <input type="number" id="eksponenBil1"><br>
+            Bilangan Pangkat:<br>
+            <input type="number" id="eksponenBil2"><br><br>
+            <button type="button" onclick="hitungEksponen()">Hitung</button>
+        </form> 
+        <p id="eksponenHasil">Hasil Eksponen = </p>
+    </section>
+    
+    <!-- Pembagian Content -->
+    <section id="pembagian">
+        <h1>Pembagian</h1>
+        <form>
+            Bilangan 1:<br>
+            <input type="number" id="pembagianBil1"><br>
+            Bilangan 2:<br>
+            <input type="number" id="pembagianBil2"><br><br>
+            <button type="button" onclick="hitungPembagian()">Hitung</button>
+        </form> 
+        <p id="pembagianHasil">Hasil Pembagian = </p>
+    </section>
+    
+    <!-- Pengurangan Content -->
+    <section id="pengurangan">
+        <h1>Pengurangan</h1>
+        <form>
+            <label for="penguranganBilangan1">Bilangan 1:</label>
+            <input type="number" id="penguranganBilangan1" name="bilangan1"><br><br>
+            <label for="penguranganBilangan2">Bilangan 2:</label>
+            <input type="number" id="penguranganBilangan2" name="bilangan2"><br><br>
+            <label>Hasil Pengurangan = </label>
+            <span id="penguranganHasil">0</span><br><br>
+            <button type="button" onclick="hitungPengurangan()">Hitung</button>
+        </form>
+    </section>
+    
+    <!-- Perkalian Content -->
+    <section id="perkalian">
+        <h1>Perkalian</h1>
+        <form>
+            Bilangan 1: <input type="number" id="perkalianBil1"><br><br>
+            Bilangan 2: <input type="number" id="perkalianBil2"><br><br>
+            Hasil Perkalian = <span id="perkalianHasil"></span><br><br>
+            <button type="button" onclick="hitungPerkalian()">Hitung</button>
+        </form>
+    </section>
+    
+    <!-- Decrement Content -->
+    <section id="decrement">
+        <h1>Decrement</h1>
+        <form onsubmit="decrementNumber(); return false;">
+            <label for="decrementNumber1">Bilangan 1:</label>
+            <input type="number" id="decrementNumber1" required><br><br>
+            <label>Hasil Decrement = </label>
+            <span id="decrementResult"></span><br><br>
+            <input type="submit" value="Hitung">
+        </form>
+    </section>
+    
+    <!-- Increment Content -->
+    <section id="increment">
+        <h1>Increment</h1>
+        <form onsubmit="incrementNumber(); return false;">
+            <label for="incrementNumber1">Bilangan 1:</label>
+            <input type="number" id="incrementNumber1" required><br><br>
+            <label>Hasil Increment = </label>
+            <span id="incrementResult"></span><br><br>
+            <input type="submit" value="Hitung">
+        </form>
+    </section>
+    
+    <!-- Modulus Content -->
+    <section id="modulus">
+        <h1>Modulus</h1>
+        <form onsubmit="calculateModulus(); return false;">
+            <label for="modulusNumber1">Bilangan 1:</label>
+            <input type="number" id="modulusNumber1" required><br><br>
+            <label for="modulusNumber2">Bilangan 2:</label>
+            <input type="number" id="modulusNumber2" required><br><br>
+            <label>Hasil Modulus = </label>
+            <span id="modulusResult"></span><br><br>
+            <input type="submit" value="Hitung">
+        </form>
+    </section>
+    
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tugas Pertama</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgb(206, 100, 201);
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+        }
+        h3 {
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #555;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        button {
+            background-color: #78cbd1;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #8bdadf;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>cek kelulusan siswa</h3>
+        <label for="nilai">Nilai:</label>
+        <input type="number" id="nilai" name="nilai">
+        <label for="ketidakhadiran">Jumlah Tidak Hadir:</label>
+        <input type="number" id="ketidakhadiran" name="ketidakhadiran">
+        <button onclick="cekLulus()">Cek Keterangan</button>
+    </div>
+
+    <script>
+        function cekLulus() {
+            let nilai = document.getElementById("nilai").value;
+            let ketidakhadiran = document.getElementById("ketidakhadiran").value;
+
+            if (nilai < 75 && ketidakhadiran > 5) {
+                alert("Anda tidak lulus");
+            } else {
+                alert("Anda Lulus");
+            }
+        }
+    </script>
+</body>
+</html>
